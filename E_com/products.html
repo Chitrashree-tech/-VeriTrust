@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Walmart</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    
+    <main class="products-page">
+        <div class="container">
+            <div class="filters">
+                <h3>Filters</h3>
+                <div class="filter-section">
+                    <h4>Price Range</h4>
+                    <input type="range" id="priceRange" min="0" max="1000" value="1000">
+                    <div class="price-range">
+                        <span>₹0</span>
+                        <span>₹1000+</span>
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <h4>Category</h4>
+                    <label><input type="checkbox" name="category" value="electronics" checked> Electronics</label>
+                    <label><input type="checkbox" name="category" value="home" checked> Home</label>
+                    <label><input type="checkbox" name="category" value="grocery" checked> Grocery</label>
+                </div>
+            </div>
+            
+            <div class="product-grid">
+                <!-- Products will be loaded via JavaScript -->
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer (same as index.html) -->
+    
+    <script src="scripts/main.js"></script>
+    <script src="scripts/products.js"></script>
+</body>
+</html>

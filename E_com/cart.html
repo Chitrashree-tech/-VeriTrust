@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Walmart</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+     <nav class="top-nav">
+    <div class="container">
+        <button id="mobileMenuBtn" class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search products...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="user-actions">
+            <a href="#"><i class="fas fa-user"></i> Account</a>
+            <a href="cart.html" class="cart-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div id="mobileMenu" class="mobile-menu">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="products.html"><i class="fas fa-shopping-bag"></i> Products</a>
+    <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+    <a href="#"><i class="fas fa-user"></i> Account</a>
+</div>
+    
+    <main class="cart-page">
+        <div class="container">
+            <h1>Your Cart <span class="cart-count">0</span> items</h1>
+            
+            <div class="cart-container">
+                <div class="cart-items">
+                    <!-- Cart items will be loaded via JavaScript -->
+                </div>
+                
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Subtotal (<span class="item-count">0</span> items)</span>
+                        <span class="subtotal">₹0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span>FREE</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax</span>
+                        <span class="tax">₹0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span class="total-price">₹0.00</span>
+                    </div>
+                    <a href="checkout.html" class="btn checkout-btn">Proceed to Checkout</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer (same as index.html) -->
+    
+    <script src="scripts/main.js"></script>
+    <script src="scripts/cart.js"></script>
+</body>
+</html>

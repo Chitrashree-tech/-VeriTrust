@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Walmart</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    
+    <main class="confirmation-page">
+        <div class="container">
+            <div class="confirmation-card">
+                <div class="confirmation-header">
+                    <i class="fas fa-check-circle"></i>
+                    <h1>Order Confirmed!</h1>
+                    <p>Thank you for your purchase</p>
+                </div>
+                
+                <div class="order-details">
+                    <div class="detail-row">
+                        <span>Order Number</span>
+                        <span>#${Math.floor(100000 + Math.random() * 900000)}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Date</span>
+                        <span>${new Date().toLocaleDateString()}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Total</span>
+                        <span class="total-price">₹0.00</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Payment Method</span>
+                        <span>VISA •••• 1234</span>
+                    </div>
+                </div>
+                
+                <div class="shipping-info">
+                    <h3>Shipping to:</h3>
+                    <p id="shippingAddress"></p>
+                </div>
+                
+                <div class="confirmation-actions">
+                    <a href="index.html" class="btn">Continue Shopping</a>
+                    <a href="#" class="btn secondary">View Order Details</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer (same as index.html) -->
+    
+    <script src="scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update total price
+            const subtotal = AppState.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const tax = subtotal * 0.08;
+            const total = subtotal + tax;
+            document.querySelector('.total-price').textContent = `₹${total.toFixed(2)}`;
+            
+            // Clear cart after order is placed
+            AppState.clearCart();
+            
+            // Set shipping address from form (in a real app, this would come from your backend)
+            const shippingAddress = localStorage.getItem('shippingAddress') || '123 Main St, Mumbai, Maharashtra 400001';
+            document.getElementById('shippingAddress').textContent = shippingAddress;
+        });
+    </script>
+</body>
+</html>
